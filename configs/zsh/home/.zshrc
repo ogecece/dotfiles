@@ -322,4 +322,4 @@ alias rmgitcache="rm -r ~/.cache/git"
 alias personal='cp -Rf /personal/* ~'
 
 ### reporting tools
-neofetch
+neofetch | lolcat
