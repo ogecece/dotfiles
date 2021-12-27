@@ -104,13 +104,6 @@ install_all_packages() {
 
 
 echo
-tput setaf 6;
-echo "################################################################"
-echo "Starting installing packages..."
-echo "################################################################"
-tput sgr0
-
-echo
 tput setaf 4;
 echo "################################################################"
 echo "Updating existing packages"
@@ -127,10 +120,3 @@ echo "################################################################"
 tput sgr0
 
 install_all_packages
-
-echo
-tput setaf 6;
-echo "################################################################"
-echo "Packages are installed"
-echo "################################################################"
-tput sgr0
