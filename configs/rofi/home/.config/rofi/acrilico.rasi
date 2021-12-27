@@ -1,0 +1,136 @@
+/*
+ * Acrílico Color theme
+ * Author: Giulio Carvalho <giulioccavalcante@gmail.com>
+ * Repository: https://github.com/giuliocc/.dotfiles
+ * License: MIT
+ *
+ *
+ * Inspired by One Dark Color Theme
+ * Author: Benjamin Stauss (@me-benni)
+ */
+
+/* The default colors are "Bluloco Dark" */
+
+* {
+  black:                #4a505d;
+  transpblack:          #4a505d90;
+  lightblack:           #61697a;
+  transplightblack:     #61697a90;
+  red:                  #f81141;
+  transpred:            #f8114190;
+  lightred:             #fc4a6d;
+  transplightred:       #fc4a6d90;
+  green:                #23974a;
+  transpgreen:          #23974a90;
+  lightgreen:           #37bd58;
+  transplightgreen:     #37bd5890;
+  yellow:               #fd7e57;
+  transpyellow:         #fd7e5790;
+  lightyellow:          #f6be48;
+  transplightyellow:    #f6be4890;
+  blue:                 #285bff;
+  transpblue:           #285bff90;
+  lightblue:            #199ffd;
+  transplightblue:      #199ffd90;
+  magenta:              #8c62fd;
+  transpmagenta:        #8c62fd90;
+  lightmagenta:         #fc58f6;
+  transplightmagenta:   #fc58f690;
+  cyan:                 #366f9a;
+  transpcyan:           #366f9a90;
+  lightcyan:            #50acae;
+  transplightcyan:      #50acae90;
+  white:                #ccd5e5;
+  transpwhite:          #ccd5e590;
+  lightwhite:           #ffffff;
+  transplightwhite:     #ffffff90;
+  fg:                   #abb2bf;
+  transpfg:             #abb2bf90;
+  bg:                   #1e2127;
+  transpbg:             #1e212790;
+
+  spacing: 0;
+  background-color: transparent;
+
+  text-color: @lightwhite;
+  font: "FiraSansCondensed Light 18";
+}
+
+window {
+  transparency: "real";
+  fullscreen: true;
+  background-color: @transpmagenta;
+}
+
+mainbox {
+  padding: 30% 38%;
+}
+
+inputbar {
+  margin: 0px 0px 20px 25px;
+  children: [entry, case-indicator];
+}
+
+prompt {
+  text-color: @lightwhite;
+  font: "FiraSansCondensed Light 16";
+}
+
+textbox-prompt-colon {
+  expand: false;
+  text-color: @fg;
+}
+
+entry {
+  margin: 0px 12px;
+  font: "FiraSansCondensed Bold 18";
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  scrollbar: false;
+}
+
+element {
+  padding: 5px;
+  highlight: bold;
+  border-radius: 3px;
+}
+
+element selected {
+  background-color: @lightwhite;
+  text-color: @magenta;
+}
+
+element urgent {
+  text-color: @red;
+}
+
+element selected urgent {
+  background-color: @red;
+  text-color: @magenta;
+}
+
+element active {
+  text-color: @green;
+}
+
+element selected active {
+  background-color: @green;
+  text-color: @magenta;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @black;
+  border: 1px;
+  border-color: @bg;
+}
+
+button selected {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @lightwhite;
+}

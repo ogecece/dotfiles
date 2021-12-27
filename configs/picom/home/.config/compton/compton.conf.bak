@@ -1,0 +1,84 @@
+##########
+# Shadow #
+##########
+
+
+shadow = true;         # Enabled client-side shadows on windows.
+# no-dock-shadow = false; # Avoid drawing shadows on dock/panel windows.
+# no-dnd-shadow = true;   # Don't draw shadows on DND windows.
+clear-shadow = true;    # Zero the part of the shadow's mask behind the 
+                        # window. Fix some weirdness with ARGB windows.
+shadow-radius = 15;     # The blur radius for shadows. (default 12)
+shadow-offset-x = -15;  # The left offset for shadows. (default -15)
+shadow-offset-y = -15;  # The top offset for shadows. (default -15)
+shadow-opacity = 0.85;  # The translucency for shadows. (default .75)
+shadow-exclude = [
+    "! name~=''",  # Don't draw shadows on unknown windows (including i3wm's title bars)
+    "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"  # Don't draw multiple shadows for tabbed windows
+];
+
+
+###########
+# Opacity #
+###########
+
+
+inactive-opacity = 0.85;
+blur-background = true;
+blur-kern = "7x7box";
+blur-background-fixed = true;
+blur-background-exclude = [
+    "window_type = 'dock'",
+    "window_type = 'desktop'"
+];
+opacity-rule = [
+    "100:role = 'browser' && (name *?= 'youtube' || name *?= 'netflix' || name *?= 'prime video' || name *?= 'nebula')",
+    "92:class_g = 'Alacritty' && focused = 1",
+];
+
+
+##########
+# Fading #
+##########
+
+
+fading = false;
+fade-delta = 4;
+
+
+#########
+# Other #
+#########
+
+
+backend = "glx";
+sw-opti = true;
+unredir-if-possible = false;
+detect-client-leader = true;
+
+
+###############
+# GLX backend #
+###############
+
+
+glx-no-stencil = true;
+glx-no-rebind-pixmap = true;
+glx-swap-method = "undefined";
+glx-copy-from-front = false;
+
+
+########################
+# Window type settings #
+########################
+
+
+wintypes:
+{
+    tooltip = { fade = true; opacity = 0.8; focus = true; shadow = false; }
+    dock = { opacity = 1.0; shadow = true; }
+    dnd = { shadow = false; }
+    popup_menu = { opacity = 1.0;  shadow = false; }
+    dropdown_menu = { opacity = 1.0;  shadow = false; }
+    notify = { fade = true; opacity = 0.8;  shadow = true; }
+};

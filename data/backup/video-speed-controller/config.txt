@@ -1,0 +1,19 @@
+Show/hide controller    |  F7   |   0   |   Do not disable website key bindings
+Decrease speed          |   -   |  0.1  |   Do not disable website key bindings
+Increase speed          |   +   |  0.1  |   Do not disable website key bindings
+Rewind                  | Left  |   5   |   Do not disable website key bindings
+Advance                 | Right |   5   |   Do not disable website key bindings
+Reset speed             |  F8   |   1   |   Do not disable website key bindings
+Preferred speed         |   \   |  1.5  |   Do not disable website key bindings
+Pause                   |   ~   |   0   |   Do not disable website key bindings
+
+Enabled                         [x]
+Hide controller by default      [x]
+Remember Playback Speed         [x]
+Work on audio                   [x]
+Controller opacity              0.3
+Blacklisted sites               "
+                                netflix.com
+                                primevideo.com
+                                "
+

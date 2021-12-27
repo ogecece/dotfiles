@@ -1,0 +1,5 @@
+# enable copy to clipboard
+set selection-clipboard clipboard
+
+# only show filename in the statusbar
+set statusbar-basename true

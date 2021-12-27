@@ -1,0 +1,46 @@
+#!/bin/bash
+# Give a battery name (e.g. BAT0) as an argument.
+
+# get xresources colors
+# for x in "$(xrdb -query | sed "s/.*\.color/export color/;s/:\s*/=\"/g;s/$/\"/g" | awk '$1 ~ "^export"')"; do eval "$x"; done
+
+# get pywal colors
+source ~/.cache/wal/colors.sh
+
+case $BLOCK_BUTTON in
+    3) pgrep -x dunst >/dev/null && notify-send "<b>Battery module:</b>
+: stagnant charge
+: charging
+- Text color reflects charge left" ;;
+esac
+
+capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
+status=$(cat /sys/class/power_supply/"$1"/status)
+
+if [ "$capacity" -ge 98 ]; then
+	color="$color12"
+	level=
+elif [ "$capacity" -ge 75 ]; then
+	color="$color10"
+	level=
+elif [ "$capacity" -ge 50 ]; then
+	color="$color15"
+	level=
+elif [ "$capacity" -ge 25 ]; then
+	color="$color15"
+	level=
+elif [ "$capacity" -ge 20 ]; then
+	color="$color15"
+	level=
+elif [ "$capacity" -ge 10 ]; then
+	color="$color11"
+	level=
+else
+	color="$color9"
+	level=
+fi
+
+status="$(echo "$status" | sed -e "s/,//g;s/Discharging//;s/Full//;s/Charging/ /;s/Unknown/ /;s/ 0*/ /g;s/ :/ /g")"
+capacity="$(echo "$capacity" | sed -e 's/$/%/')"
+
+echo "<span color='$color'>$status$level $capacity </span>"

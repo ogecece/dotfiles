@@ -1,0 +1,4 @@
+rofi.display-run: run
+rofi.display-drun: search
+rofi.show-icons: true
+rofi.theme: ~/.config/rofi/acrilico.rasi
