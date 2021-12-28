@@ -27,6 +27,7 @@ zathura-pdf-mupdf
 yay_package_list=(
 github-cli
 nvm
+tdrop-git
 ytmdesktop
 zsh-pure-prompt
 )

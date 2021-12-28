@@ -235,6 +235,8 @@ alias vnsswitch="sudo $EDITOR /etc/nsswitch.conf"
 alias vsamba="sudo $EDITOR /etc/samba/smb.conf"
 alias vgnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
 alias valacritty="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias vpolybar="$EDITOR ~/.config/polybar/config"
+alias vxmonad="$EDITOR ~/.xmonad/xmonad.hs"
 alias vb="$EDITOR ~/.bashrc"
 alias vz="$EDITOR ~/.zshrc"
 
