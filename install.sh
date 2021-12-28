@@ -147,7 +147,7 @@ tput sgr0
 echo
 tput setaf 6;
 echo "################################################################"
-echo "Starting configuring..."
+echo "Starting configuring base programs..."
 echo "################################################################"
 tput sgr0
 
@@ -156,7 +156,55 @@ sh scripts/100-configure.sh
 echo
 tput setaf 6;
 echo "################################################################"
-echo "Programs are configured"
+echo "Base programs are configured"
+echo "################################################################"
+tput sgr0
+
+echo
+tput setaf 6;
+echo "################################################################"
+echo "Starting configuring Python..."
+echo "################################################################"
+tput sgr0
+
+sh scripts/101-python.sh
+
+echo
+tput setaf 6;
+echo "################################################################"
+echo "Python is configured"
+echo "################################################################"
+tput sgr0
+
+echo
+tput setaf 6;
+echo "################################################################"
+echo "Starting configuring Docker..."
+echo "################################################################"
+tput sgr0
+
+sh scripts/102-docker.sh
+
+echo
+tput setaf 6;
+echo "################################################################"
+echo "Docker is configured"
+echo "################################################################"
+tput sgr0
+
+echo
+tput setaf 6;
+echo "################################################################"
+echo "Starting configuring Github..."
+echo "################################################################"
+tput sgr0
+
+sh scripts/103-github.sh
+
+echo
+tput setaf 6;
+echo "################################################################"
+echo "Github is configured"
 echo "################################################################"
 tput sgr0
 

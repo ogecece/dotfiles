@@ -5,6 +5,7 @@ IFS=$'\n\t'
 
 pacman_package_list=(
 base-devel
+clang
 docker
 docker-compose
 fzf
@@ -12,6 +13,7 @@ newsboat
 npm
 ntfs-3g
 pyenv
+python-pip
 python-virtualenvwrapper
 ripgrep
 stow
