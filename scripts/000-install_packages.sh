@@ -16,6 +16,8 @@ pyenv
 python-pip
 python-virtualenvwrapper
 ripgrep
+screenkey
+slop
 stow
 sxhkd
 tldr
