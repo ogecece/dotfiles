@@ -290,6 +290,7 @@ alias vpolybar="$EDITOR ~/.config/polybar/config"
 alias vxmonad="$EDITOR ~/.xmonad/xmonad.hs"
 alias vb="$EDITOR ~/.bashrc"
 alias vz="$EDITOR ~/.zshrc"
+alias vd="$EDITOR ~/.dotfiles"
 
 ## gpg
 ### verify signature for isos
