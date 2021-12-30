@@ -173,10 +173,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((0, xF86XK_AudioRaiseVolume), spawn $ "amixer -q set Master 5%+")
 
   -- Increase brightness
-  , ((0, xF86XK_MonBrightnessUp),  spawn $ "xbacklight -inc 5")
+  , ((0, xF86XK_MonBrightnessUp),  spawn $ "busctl --user call org.clight.clight /org/clight/clight org.clight.clight IncBl d 0.02")
 
   -- Decrease brightness
-  , ((0, xF86XK_MonBrightnessDown), spawn $ "xbacklight -dec 5")
+  , ((0, xF86XK_MonBrightnessDown), spawn $ "busctl --user call org.clight.clight /org/clight/clight org.clight.clight DecBl d 0.02")
 
 --  , ((0, xF86XK_AudioPlay), spawn $ "mpc toggle")
 --  , ((0, xF86XK_AudioNext), spawn $ "mpc next")

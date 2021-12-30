@@ -14,6 +14,7 @@ run pamac-tray &
 run xfce4-power-manager &
 run xfce4-clipman &
 run volumeicon &
+run clight &
 # numlockx on &
 blueberry-tray &
 picom --config $HOME/.config/picom/picom.conf &
