@@ -26,5 +26,8 @@ picom --config $HOME/.config/picom/picom.conf &
 #change your keyboard if you need it
 #setxkbmap -layout be
 
+# swap caps lock with escape
+setxkbmap -option caps:swapescape
+
 #cursor active at boot
 xsetroot -cursor_name left_ptr &
