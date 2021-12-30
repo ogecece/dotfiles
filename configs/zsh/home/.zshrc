@@ -43,24 +43,20 @@ export PATH="$HOME/.scripts:$PATH"
 ## poetry
 export POETRY_VIRTUALENVS_PATH="$HOME/work/.virtualenvs"
 
+## pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
 ## virtualenvwrapper
 export WORKON_HOME="$HOME/work/.virtualenvs"
-
-### force virtualenvwrapper python to be python3
-export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
 
 ### virtualenvwrapper doesn't cd after activate
 export VIRTUALENVWRAPPER_WORKON_CD=0
 
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 source /usr/bin/virtualenvwrapper_lazy.sh
-
-## pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 
 
 # NODE
