@@ -6,7 +6,7 @@ import XMonad.Hooks.SetWMName
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageHelpers(doFullFloat, doCenterFloat, isFullscreen, isDialog)
+import XMonad.Hooks.ManageHelpers(doFullFloat, doCenterFloat, doRectFloat, isFullscreen, isDialog)
 import XMonad.Config.Desktop
 import XMonad.Config.Azerty
 import XMonad.Util.Run(spawnPipe)
@@ -14,19 +14,21 @@ import XMonad.Actions.SpawnOn
 import XMonad.Util.EZConfig (additionalKeys, additionalMouseBindings)
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.UrgencyHook
+import XMonad.Actions.UpdatePointer
 import qualified Codec.Binary.UTF8.String as UTF8
 
 import XMonad.Layout.Spacing
 import XMonad.Layout.Gaps
 import XMonad.Layout.ResizableTile
----import XMonad.Layout.NoBorders
-import XMonad.Layout.Fullscreen (fullscreenFull)
+import XMonad.Layout.NoBorders
+import qualified XMonad.Layout.Fullscreen as F
 import XMonad.Layout.Cross(simpleCross)
 import XMonad.Layout.Spiral(spiral)
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.IndependentScreens
+import XMonad.Layout.Tabbed
 
 
 import XMonad.Layout.CenteredMaster(centerMaster)
@@ -35,6 +37,7 @@ import Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import qualified Data.ByteString as B
+import Data.Ratio
 import Control.Monad (liftM2)
 import qualified DBus as D
 import qualified DBus.Client as D
@@ -45,8 +48,8 @@ myStartupHook = do
     setWMName "LG3D"
 
 -- colours
-normBord = "#4c566a"
-focdBord = "#5e81ac"
+normBord = "#555555"
+focdBord = "#e60053"
 fore     = "#DEE3E0"
 back     = "#282c34"
 winType  = "#c678dd"
@@ -72,7 +75,7 @@ myManageHook = composeAll . concat $
     , [className =? c --> doCenterFloat | c <- myCFloats]
     , [title =? t --> doFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
-    , [title =? t --> doFullFloat | t <- myTFullScreens]
+    , [title =? t --> doRectFloat (W.RationalRect (1 % 3) (1 % 4) (2 % 3) (1 % 2)) | t <- myTFullScreens]
     , [resource =? i --> doIgnore | i <- myIgnores]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61612" | x <- my1Shifts]
     -- , [(className =? x <||> title =? x <||> resource =? x) --> doShiftAndGo "\61899" | x <- my2Shifts]
@@ -103,15 +106,29 @@ myManageHook = composeAll . concat $
     -- my9Shifts = []
     -- my10Shifts = ["discord"]
 
+myTabbedConfig = def {
+  activeColor = focdBord
+, inactiveColor = normBord
+, urgentColor = fore
+, activeBorderColor = focdBord
+, inactiveBorderColor = normBord
+, urgentBorderColor = fore
+, activeTextColor = back
+, inactiveTextColor = fore
+, urgentTextColor = back
+, fontName = "xft:Noto Sans:size=10:antialias=true"
+}
 
-
-
-myLayout = spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True $ avoidStruts $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) $ tiled ||| Mirror tiled ||| spiral (6/7)  ||| ThreeColMid 1 (3/100) (1/2) ||| Full
+myLayout = spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True $ avoidStruts $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) $
+    tabbed shrinkText myTabbedConfig
+    ||| tiled
+    ||| Mirror tiled
+    ||| ThreeColMid nmaster delta ratio
     where
-        tiled = Tall nmaster delta tiled_ratio
+        tiled = Tall nmaster delta ratio
         nmaster = 1
         delta = 3/100
-        tiled_ratio = 1/2
+        ratio = 1/2
 
 
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
@@ -134,7 +151,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- SUPER + ... KEYS
 
-  [ ((modMask, xK_t), spawn $ "tdrop -ma -w 60% -x 20% -h 40% -y 59% -s dropdown alacritty --title tdrop" )
+  [ ((modMask, xK_t), spawn $ "tdrop -tma -w 60% -x 20% -h 40% -y 59% -s dropdown alacritty --title tdrop" )
   , ((modMask, xK_e ), spawn $ "dolphin")
   , ((modMask, xK_d), spawn $ "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher2.rasi" )
   , ((modMask, xK_Escape), spawn $ "xfce4-taskmanager" )
@@ -284,15 +301,16 @@ main = do
             --myBaseConfig { keys = belgianKeys <+> keys belgianConfig }
 
                 {startupHook = myStartupHook
-, layoutHook = gaps [(U,35), (D,5), (R,5), (L,5)] $ myLayout ||| layoutHook myBaseConfig
-, manageHook = manageSpawn <+> myManageHook <+> manageHook myBaseConfig
+, layoutHook = gaps [(U,35), (D,5), (R,5), (L,5)] $ myLayout
+, manageHook = manageSpawn <+> myManageHook <+> F.fullscreenManageHook <+> manageHook myBaseConfig
 , modMask = myModMask
 , borderWidth = myBorderWidth
-, handleEventHook    = handleEventHook myBaseConfig <+> fullscreenEventHook
+, handleEventHook    = handleEventHook myBaseConfig <+> F.fullscreenEventHook
 , focusFollowsMouse = myFocusFollowsMouse
 , workspaces = myWorkspaces
 , focusedBorderColor = focdBord
 , normalBorderColor = normBord
 , keys = myKeys
 , mouseBindings = myMouseBindings
+, logHook = updatePointer (0.5, 0.5) (1, 1)
 }
