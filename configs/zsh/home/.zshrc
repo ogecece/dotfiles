@@ -1,24 +1,4 @@
-# GENERAL EXPORTS
-
-### defaults
-export EDITOR="vim"
-export TERMINAL="alacritty"
-export BROWSER="brave"
-
-### locales
-export LANG=en_US.UTF-8
-export LC_CTYPE="en_US.UTF-8"
-export LC_NUMERIC="pt_BR.UTF-8"
-export LC_TIME="pt_BR.UTF-8"
-export LC_COLLATE="pt_BR.UTF-8"
-export LC_MONETARY="pt_BR.UTF-8"
-export LC_MESSAGES="pt_BR.UTF-8"
-export LC_PAPER="pt_BR.UTF-8"
-export LC_NAME="pt_BR.UTF-8"
-export LC_ADDRESS="pt_BR.UTF-8"
-export LC_TELEPHONE="pt_BR.UTF-8"
-export LC_MEASUREMENT="pt_BR.UTF-8"
-export LC_IDENTIFICATION="pt_BR.UTF-8"
+# APPEARANCE
 
 ### coloring less and man
 export LESS=-R
@@ -29,13 +9,6 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
-
-
-### add user binaries to PATH
-export PATH="$HOME/.local/bin:$PATH"
-
-### add user scripts to PATH
-export PATH="$HOME/.scripts:$PATH"
 
 
 # PYTHON
@@ -139,6 +112,9 @@ setopt NO_CASE_GLOB
 setopt GLOBDOTS
 ### correct mistyped commands
 setopt CORRECT
+
+
+# ALIASES
 
 ### list
 alias ls='ls --color=auto'
@@ -288,6 +264,7 @@ alias vgnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
 alias valacritty="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias vpolybar="$EDITOR ~/.config/polybar/config"
 alias vxmonad="$EDITOR ~/.xmonad/xmonad.hs"
+alias vvim="$EDITOR ~/.config/nvim"
 alias vb="$EDITOR ~/.bashrc"
 alias vz="$EDITOR ~/.zshrc"
 alias vd="$EDITOR ~/.dotfiles"
@@ -374,6 +351,9 @@ alias rmgitcache="rm -r ~/.cache/git"
 
 ### moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
+
+
+# REPORTING
 
 ### reporting tools
 # neofetch | lolcat
