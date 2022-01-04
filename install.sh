@@ -72,9 +72,15 @@ setup_git() {
 setup_dotfiles_repo() {
     if [[ ! -d ~/.dotfiles ]]; then
         git clone git@github.com:giuliocc/dotfiles ~/.dotfiles
+        chmod +x ~/.dotfiles/*.sh
     fi
 
-    chmod +x ~/.dotfiles/*.sh
+    if [[ ! -f ~/.dotfiles/.env ]]; then
+        echo
+        echo "Write your personal .env..."
+
+        vi ~/.dotfiles/.env
+    fi
 
     echo
     tput setaf 2

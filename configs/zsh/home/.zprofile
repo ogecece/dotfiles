@@ -26,3 +26,7 @@ export PATH="$HOME/.local/bin:$PATH"
 ### add user scripts to PATH
 export PATH="$HOME/.scripts:$PATH"
 
+
+# CUSTOM ENVVARS
+
+source ~/.dotfiles/.env

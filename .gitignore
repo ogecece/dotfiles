@@ -10,3 +10,6 @@ xmonad-x86_64-linux
 # haskell
 *.o
 *.hi
+
+# general
+.env
