@@ -3,9 +3,6 @@
 toggler=0
 sleep_pid=0
 
-DATE="$(date +"  %H:%M")"
-FULL_DATE="$(date +"  %a, %-d %b    %H:%M")"
-
 toggle() {
     toggler=$(((toggler + 1) % 2))
 
@@ -14,14 +11,13 @@ toggle() {
     fi
 }
 
-
 trap "toggle" USR1
 
 while true; do
     if [ $toggler -eq 0 ]; then
-        echo "$DATE"
+        echo "$(date +"  %H:%M")"
     else
-        echo "$FULL_DATE"
+        echo "$(date +"  %a, %-d %b    %H:%M")"
     fi
     sleep 1 &
     sleep_pid=$!
