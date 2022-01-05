@@ -3,6 +3,9 @@
 Session.vim
 cache_directory
 
+# nvim
+packer_compiled.lua
+
 # xmonad
 *.errors
 xmonad-x86_64-linux

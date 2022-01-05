@@ -96,6 +96,7 @@ install_standalone_python_package() {
 install_standalone_python_packages() {
     packages=(
     mitmproxy
+    neovim-remote
     poetry
     )
 

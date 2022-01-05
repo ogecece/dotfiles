@@ -154,6 +154,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask, xK_t), spawn $ "tdrop -tma -w 60% -x 20% -h 40% -y 59% -s dropdown alacritty --title tdrop" )
   , ((modMask, xK_e ), spawn $ "dolphin")
   , ((modMask, xK_d), spawn $ "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher2.rasi" )
+  , ((modMask, xK_v ), spawn $ "alacritty -e nvim")
   , ((modMask, xK_Escape), spawn $ "xfce4-taskmanager" )
   , ((modMask, xK_Return), spawn $ "alacritty" )
 

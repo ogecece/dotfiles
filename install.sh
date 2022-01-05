@@ -56,7 +56,7 @@ setup_git() {
         read GIT_EMAIL
 
         git config --global user.email $GIT_EMAIL
-        git config --global core.editor vim
+        git config --global core.editor 'nvr --remote-wait-silent'
         git config --global init.defaultBranch main
     fi
 
