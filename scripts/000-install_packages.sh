@@ -30,6 +30,7 @@ zathura-pdf-mupdf
 )
 
 yay_package_list=(
+bfg
 github-cli
 nvm
 tdrop-git
