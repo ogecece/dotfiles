@@ -15,6 +15,7 @@ neovim
 newsboat
 npm
 ntfs-3g
+picom
 pyenv
 python-pynvim
 python-pip
