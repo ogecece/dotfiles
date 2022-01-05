@@ -139,7 +139,7 @@ font-3 = "Noto Sans Mono:size=10;0"
 font-4 = "FontAwesome5Brands:size=13;0"
 
 modules-left = ewmh
-modules-center = date weather
+modules-center = date2 weather
 modules-right = cpu memory temperature filesystem-root sysmenu
 
 tray-position = right
@@ -384,6 +384,15 @@ time-alt = "  %d/%m/%Y     %OH:%M"
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = %date% %time%
+
+#################################################################
+
+[module/date2]
+type = custom/script
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+click-right = gsimplecal
+tail = true
+click-left = kill -USR1 %pid%
 
 #################################################################
 

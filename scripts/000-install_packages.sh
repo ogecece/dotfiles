@@ -9,6 +9,7 @@ clang
 docker
 docker-compose
 fzf
+gsimplecal
 newsboat
 npm
 ntfs-3g
