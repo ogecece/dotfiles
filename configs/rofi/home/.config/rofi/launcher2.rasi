@@ -1,12 +1,5 @@
-/*
- *
- * Original Author  : Aditya Shakya
- * Author    : DN-debug
- *
- */
-
 configuration {
-	font:							"Noto sans 12";
+	font:							"FiraSansCondensed Light 15";
     show-icons:                     true;
 	icon-theme: 					"";
     display-drun: 					"";
@@ -21,40 +14,43 @@ configuration {
 
 * {
   background-color: @al;
-  text-color: #eeeeee;
+  text-color: @fg;
 }
 
 
 window {
     transparency:                   "real";
-    background-color:               #101010A9;
-    text-color:                     #eeeeee;
+    background-color:               @bga;
+    text-color:                     @fg;
 	border:							0px;
-	border-color:					@ac;
+	border-color:					@al;
     border-radius:                  5px;
-    height:                         90%;
-	width:							96%;
+    height:                         60%;
+	width:							25%;
     location:                       northwest;
-    x-offset:                        2%;
-    y-offset:                        5%;
+    x-offset:                        37.5%;
+    y-offset:                        20%;
 }
 
 
 entry {
-    background-color:               #000000;
-    text-color:                     white;
-    expand:                         false;
-    horizontal-align:               50%;
-    placeholder:                    "Type to search";
-    margin:                         0% 0% 0% 37%;
-    padding:                        1.5% 5.5%;
-    blink:                          true;
+  transparency:                   "real";
+  background-color:               @bar;
+  text-color:                     @fg;
+  expand:                         false;
+  horizontal-align:               50%;
+  placeholder:                    "Type to search";
+  margin:                         0% 0% 0% 2.5%;
+  padding:                        1.5% 5.5%;
+  blink:                          true;
+	border:							0% 0% 0% 0%;
+    border-radius:                  10px;
 }
 
 inputbar {
 	children: 						[ entry ];
     background-color:               #00000000;
-    text-color:                     @bg;
+    text-color:                     @bga;
     expand:                         false;
 	border:							0% 0% 0% 0%;
     border-radius:                  0px;
@@ -66,10 +62,10 @@ inputbar {
 listview {
     background-color:               @al;
     padding:                        0px;
-    columns:                        5;
-    lines:                          5;
+    columns:                        1;
+    lines:                          6;
     spacing:                        0%;
-    cycle:                          false;
+    cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
 }
@@ -95,13 +91,14 @@ element {
 element-icon {
     size:                           48px;
     border:                         0px;
+    margin:                         0% 0% 0% 1.5%;
 }
 
 element-text {
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         0.5% 0.5% -0.5% 0.5%;
+    margin:                         0% 2% 0% 2%;
 }
 
 element selected {
