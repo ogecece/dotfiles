@@ -1,5 +1,5 @@
 configuration {
-	font:							"FiraSansCondensed Light 15";
+	font:							"SauceCodePro Nerd Font 10";
     show-icons:                     true;
 	icon-theme: 					"";
     display-drun: 					"";
