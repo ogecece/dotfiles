@@ -30,6 +30,7 @@ stow
 sxhkd
 tldr
 tree
+xorg-xmessage
 zathura
 zathura-cb
 zathura-djvu
