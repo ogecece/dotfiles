@@ -7,7 +7,16 @@ function run {
   fi
 }
 
-#starting utility applications at boot time
+# cursor active at boot
+xsetroot -xcf /usr/share/icons/Bibata-Modern-Ice/cursors/left_ptr 16
+
+# change your keyboard if you need it
+#setxkbmap -layout be
+
+# swap caps lock with escape
+setxkbmap -option caps:swapescape
+
+# starting utility applications at boot time
 run variety &
 run nm-applet &
 run pamac-tray &
@@ -23,12 +32,3 @@ picom --config $HOME/.config/picom/picom.conf &
 playerctld daemon
 
 (sleep 2; run $HOME/.config/polybar/launch.sh) &
-
-#change your keyboard if you need it
-#setxkbmap -layout be
-
-# swap caps lock with escape
-setxkbmap -option caps:swapescape
-
-#cursor active at boot
-xsetroot -xcf /usr/share/icons/Bibata-Modern-Ice/cursors/left_ptr 16
