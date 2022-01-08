@@ -42,12 +42,6 @@ import Control.Monad (liftM2)
 import qualified DBus as D
 import qualified DBus.Client as D
 
-import XMonad
-import XMonad.Hooks.DynamicLog
-
-import qualified DBus as D
-import qualified DBus.Client as D
-import qualified Codec.Binary.UTF8.String as UTF8
 
 myStartupHook = do
     spawn "$HOME/.xmonad/scripts/autostart.sh"
