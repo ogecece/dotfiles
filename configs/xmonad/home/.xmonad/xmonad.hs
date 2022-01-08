@@ -42,14 +42,20 @@ import Control.Monad (liftM2)
 import qualified DBus as D
 import qualified DBus.Client as D
 
+import XMonad
+import XMonad.Hooks.DynamicLog
+
+import qualified DBus as D
+import qualified DBus.Client as D
+import qualified Codec.Binary.UTF8.String as UTF8
 
 myStartupHook = do
     spawn "$HOME/.xmonad/scripts/autostart.sh"
     setWMName "LG3D"
 
 -- colours
-normBord = "#555555"
-focdBord = "#e60053"
+normal = "#555555"
+focused = "#e60053"
 fore     = "#DEE3E0"
 back     = "#282c34"
 winType  = "#c678dd"
@@ -107,11 +113,11 @@ myManageHook = composeAll . concat $
     -- my10Shifts = ["discord"]
 
 myTabbedConfig = def {
-  activeColor = focdBord
-, inactiveColor = normBord
+  activeColor = focused
+, inactiveColor = normal
 , urgentColor = fore
-, activeBorderColor = focdBord
-, inactiveBorderColor = normBord
+, activeBorderColor = focused
+, inactiveBorderColor = normal
 , urgentBorderColor = fore
 , activeTextColor = back
 , inactiveTextColor = fore
@@ -282,6 +288,32 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 --       | (key, sc) <- zip [xK_w, xK_e] [0..]
 --       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
+myLogHook :: D.Client -> PP
+myLogHook dbus = def
+    { ppOutput = dbusOutput dbus
+    , ppCurrent = wrap ("%{B" ++ focused ++ "}%{F" ++ back ++ "} ") " %{F-}%{B-}"
+    , ppVisible = wrap ("%{B" ++ fore ++ "}%{F" ++ back ++ "} ") " %{F-}%{B-}"
+    , ppUrgent = wrap ("%{F" ++ focused ++ "} ") " %{F-}"
+    , ppHidden = wrap ("%{F" ++ fore ++ "} ") " %{F-}"
+    , ppHiddenNoWindows = wrap ("%{F" ++ normal ++ "} ") " %{F-}"
+    , ppWsSep = " "
+    , ppSep = ""
+    , ppTitle = \text -> ""
+    , ppLayout = \text -> ""
+    }
+
+dbusOutput :: D.Client -> String -> IO ()
+dbusOutput dbus str = do
+    let signal = (D.signal objectPath interfaceName memberName) {
+            D.signalBody = [D.toVariant $ UTF8.decodeString str]
+        }
+    D.emit dbus signal
+  where
+    objectPath = D.objectPath_ "/org/xmonad/Log"
+    interfaceName = D.interfaceName_ "org.xmonad.Log"
+    memberName = D.memberName_ "Update"
+
+
 
 main :: IO ()
 main = do
@@ -309,9 +341,9 @@ main = do
 , handleEventHook    = handleEventHook myBaseConfig <+> F.fullscreenEventHook
 , focusFollowsMouse = myFocusFollowsMouse
 , workspaces = myWorkspaces
-, focusedBorderColor = focdBord
-, normalBorderColor = normBord
+, focusedBorderColor = focused
+, normalBorderColor = normal
 , keys = myKeys
 , mouseBindings = myMouseBindings
-, logHook = updatePointer (0.5, 0.5) (1, 1)
+, logHook = updatePointer (0.5, 0.5) (1, 1) <+> dynamicLogWithPP (myLogHook dbus) 
 }

@@ -90,11 +90,11 @@ pseudo-transparency = false
 
 ################################################################################
 ################################################################################
-############                  MAINBAR-XMONAD                        ############
+############                  BASEBAR-XMONAD                        ############
 ################################################################################
 ################################################################################
 
-[bar/mainbar]
+[bar/basebar]
 monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
 monitor-strict = false
@@ -138,7 +138,16 @@ font-2 = "Noto Sans:size=10;0"
 font-3 = "Noto Sans Mono:size=10;0"
 font-4 = "FontAwesome5Brands:size=13;0"
 
-modules-left = ewmh
+
+################################################################################
+################################################################################
+############                  MAINBAR-XMONAD                        ############
+################################################################################
+################################################################################
+
+[bar/mainbar]
+inherit = bar/basebar
+modules-left = xmonad
 modules-center = date2 weather
 modules-right = cpu memory filesystem-root temperature battery sysmenu
 
@@ -150,6 +159,19 @@ tray-offset-y = 0
 tray-padding = 10
 tray-scale = 1.0
 tray-background = ${colors.tray-background}
+
+
+################################################################################
+################################################################################
+############                  EXTRABAR-XMONAD                        ###########
+################################################################################
+################################################################################
+
+[bar/extrabar]
+inherit = bar/basebar
+modules-left = spotify2
+modules-center = date2
+modules-right = sysmenu
 
 
 ################################################################################
@@ -1118,6 +1140,13 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.foreground}
+
+################################################################################
+
+[module/xmonad]
+type = custom/script
+exec = xmonad-log
+tail = true
 
 ################################################################################
 
