@@ -1,5 +1,5 @@
 configuration {
-	font:							"SauceCodePro Nerd Font 10";
+	font:							"SauceCodePro Nerd Font Semibold 10.5";
     show-icons:                     true;
 	icon-theme: 					"";
     display-drun: 					"";
