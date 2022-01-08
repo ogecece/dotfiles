@@ -160,6 +160,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- SUPER + SHIFT KEYS  , ((modMask, xK_x), spawn $ "arcolinux-logout" )
 
+  , ((modMask .|. shiftMask , xK_t), spawn $ "alacritty" )
   , ((modMask .|. shiftMask , xK_d ), spawn $ "dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=22'")
   , ((modMask .|. shiftMask , xK_q ), kill)
   , ((modMask .|. shiftMask , xK_k ), spawn $ "xkill")
