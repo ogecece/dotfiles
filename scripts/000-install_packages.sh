@@ -5,6 +5,7 @@ IFS=$'\n\t'
 
 pacman_package_list=(
 arcolinux-volumeicon-git
+autorandr
 base-devel
 clang
 docker

@@ -7,6 +7,9 @@ function run {
   fi
 }
 
+# set monitors
+autorandr --change --default common
+
 # set temporary background
 feh --bg-center ~/.config/wallpaper.png
 
