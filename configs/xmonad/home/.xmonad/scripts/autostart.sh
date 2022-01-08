@@ -31,4 +31,4 @@ playerctld daemon
 setxkbmap -option caps:swapescape
 
 #cursor active at boot
-xsetroot -cursor_name left_ptr &
+xsetroot -xcf /usr/share/icons/Bibata-Modern-Ice/cursors/left_ptr 16
