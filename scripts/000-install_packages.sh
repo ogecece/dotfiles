@@ -4,6 +4,7 @@ IFS=$'\n\t'
 
 
 pacman_package_list=(
+arcolinux-volumeicon-git
 base-devel
 clang
 docker
@@ -40,6 +41,7 @@ bfg
 github-cli
 nvm
 tdrop-git
+volumeicon-git
 ytmdesktop
 zsh-pure-prompt
 )
