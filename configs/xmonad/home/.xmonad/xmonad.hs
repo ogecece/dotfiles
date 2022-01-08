@@ -201,10 +201,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 --  , ((0, xF86XK_AudioPrev), spawn $ "mpc prev")
 --  , ((0, xF86XK_AudioStop), spawn $ "mpc stop")
 
-  , ((0, xF86XK_AudioPlay), spawn $ "playerctl play-pause")
-  , ((0, xF86XK_AudioNext), spawn $ "playerctl next")
-  , ((0, xF86XK_AudioPrev), spawn $ "playerctl previous")
-  , ((0, xF86XK_AudioStop), spawn $ "playerctl stop")
+  , ((0, xF86XK_AudioPlay), spawn $ "playerctl play-pause -i chromium")
+  , ((0, xF86XK_AudioNext), spawn $ "playerctl next -i chromium")
+  , ((0, xF86XK_AudioPrev), spawn $ "playerctl previous -i chromium")
+  , ((0, xF86XK_AudioStop), spawn $ "playerctl stop -i chromium")
 
 
   --------------------------------------------------------------------
