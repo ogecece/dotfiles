@@ -7,6 +7,9 @@ function run {
   fi
 }
 
+# set temporary background
+feh --bg-center ~/.config/wallpaper.png
+
 # cursor active at boot
 xsetroot -xcf /usr/share/icons/Bibata-Modern-Ice/cursors/left_ptr 16
 
