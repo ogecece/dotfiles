@@ -886,15 +886,15 @@ thermal-zone = 0
 warn-temperature = 75
 
 format = <label>
-; format-underline = #f50a4d
+;format-underline = ${colors.alert}
 format-warn = <label-warn>
-format-warn-underline = #f50a4d
+format-warn-underline = ${colors.alert}
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 
 label =   %temperature-c%
 label-warn =   %temperature-c%
-label-warn-foreground = #f50a4d
+label-warn-foreground = ${colors.alert}
 
 ################################################################################
 
