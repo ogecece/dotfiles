@@ -834,11 +834,13 @@ label = %output:0:150%
 ;https://github.com/PrayagS/polybar-spotify
 type = custom/script
 tail = true
-format-prefix = "  "
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+click-left = playerctl previous
+click-middle = playerctl play-pause
+click-right = playerctl next
 
 
 [module/spotify-prev]

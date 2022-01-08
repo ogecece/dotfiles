@@ -32,6 +32,7 @@ zathura
 zathura-cb
 zathura-djvu
 zathura-pdf-mupdf
+zscroll-git
 )
 
 yay_package_list=(
