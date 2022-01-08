@@ -271,11 +271,12 @@ format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-foreground = ${colors.primary}
 #format-full-underline = #a3c725
 format-full-foreground = ${colors.foreground}
 format-full-background = ${colors.background}
 
+ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-0 =  
 ramp-capacity-1 =  
 ramp-capacity-2 =  
