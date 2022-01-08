@@ -169,7 +169,7 @@ tray-background = ${colors.tray-background}
 
 [bar/extrabar]
 inherit = bar/basebar
-modules-left = spotify2
+modules-left = music-player
 modules-center = date2
 modules-right = sysmenu
 
@@ -691,6 +691,22 @@ bar-progress-fill-background = ${colors.background}
 bar-progress-indicator-foreground = ${colors.foreground}
 format-online-foreground = ${colors.foreground}
 format-online-background = ${colors.background}
+
+################################################################################
+
+[module/music-player]
+;install zscroll
+;https://github.com/PrayagS/polybar-spotify
+type = custom/script
+tail = true
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+exec = ~/.config/polybar/scripts/scroll_music_player_status.sh
+click-left = playerctl previous
+click-middle = playerctl play-pause
+click-right = playerctl next
+
 ################################################################################
 
 [module/networkspeedup]
@@ -812,7 +828,7 @@ format-background = ${colors.background}
 
 ################################################################################
 
-[module/spotify1]
+[module/spotify]
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 type = custom/script
 exec = ~/.config/polybar/scripts/spotify1.sh
@@ -826,50 +842,6 @@ format-underline = #0f0
 format-prefix = "  "
 format-prefix-foreground = #0f0
 label = %output:0:150%
-
-################################################################################
-
-[module/spotify2]
-;install zscroll
-;https://github.com/PrayagS/polybar-spotify
-type = custom/script
-tail = true
-format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
-click-left = playerctl previous
-click-middle = playerctl play-pause
-click-right = playerctl next
-
-
-[module/spotify-prev]
-type = custom/script
-exec = echo ""
-format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-click-left = playerctl previous spotify
-click-right = spotify
-
-[module/spotify-play-pause]
-type = custom/ipc
-hook-0 = echo ""
-hook-1 = echo ""
-initial = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-click-left = playerctl play-pause spotify
-click-right = spotify
-
-[module/spotify-next]
-type = custom/script
-exec = echo ""
-format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-click-left = playerctl next spotify
-click-right = spotify
 
 ################################################################################
 
