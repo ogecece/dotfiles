@@ -16,13 +16,13 @@ setup_ssh() {
         echo
         echo "Write your id_rsa private key..."
 
-        vi ~/.ssh/id_rsa
+        vim ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
 
         echo
         echo "Now write your id_rsa.pub public key..."
 
-        vi ~/.ssh/id_rsa.pub
+        vim ~/.ssh/id_rsa.pub
     fi
 
     echo
@@ -79,7 +79,7 @@ setup_dotfiles_repo() {
         echo
         echo "Write your personal .env..."
 
-        vi ~/.dotfiles/.env
+        vim ~/.dotfiles/.env
     fi
 
     echo
