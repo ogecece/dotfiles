@@ -11,7 +11,7 @@ function run {
 autorandr --change --default common
 
 # set temporary background
-feh --bg-center ~/.config/wallpaper.png
+feh --bg-center ~/.config/variety/Enabled/wallpaper.png
 
 # cursor active at boot
 xsetroot -xcf /usr/share/icons/Bibata-Modern-Ice/cursors/left_ptr 16
