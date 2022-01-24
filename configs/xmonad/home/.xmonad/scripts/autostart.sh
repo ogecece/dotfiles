@@ -34,7 +34,7 @@ run "xfce4-notifyd" "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 run "playerctld" "playerctld daemon"
 
 # change your keyboard if you need it
-#setxkbmap -layout be
+setxkbmap -layout br
 
 # swap caps lock with escape
 setxkbmap -option caps:swapescape
