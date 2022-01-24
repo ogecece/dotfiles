@@ -98,12 +98,12 @@ pseudo-transparency = false
 monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
 monitor-strict = false
-override-redirect = false
+override-redirect = true
 width = 99.2%
 height = 24
 offset-x = 0.4%
-offset-y = 0.5%
-radius = 4.0
+offset-y = 0.0%
+radius = 0.0
 fixed-center = true
 bottom = false
 
@@ -121,8 +121,8 @@ line-color = #f00
 ; border-color = #00000000
 
 ; padding = 0
-padding-left = 2
-padding-right = 4
+padding-left = 0
+padding-right = 2
 
 module-margin-left = 2
 module-margin-right = 2
@@ -156,7 +156,7 @@ tray-detached = false
 tray-maxsize = 14
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 10
+tray-padding = 8
 tray-scale = 1.0
 tray-background = ${colors.tray-background}
 
@@ -847,10 +847,9 @@ label = %output:0:150%
 
 [module/sysmenu]
 type = custom/text
-content = "襤"
+content = "襤  "
 content-foreground = ${colors.secondary}
 click-left = arcolinux-logout
-click-right = arcolinux-logout
 
 ################################################################################
 

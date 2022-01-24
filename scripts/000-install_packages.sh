@@ -17,7 +17,6 @@ neovim
 newsboat
 npm
 ntfs-3g
-picom
 pnmixer
 pyenv
 python-pynvim
@@ -43,6 +42,7 @@ yay_package_list=(
 bfg
 github-cli
 nvm
+picom-git
 tdrop-git
 ytmdesktop
 zsh-pure-prompt
