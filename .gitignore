@@ -12,6 +12,7 @@ packer_compiled.lua
 # xmonad
 *.errors
 xmonad-x86_64-linux
+prompt-history
 
 # haskell
 *.o
