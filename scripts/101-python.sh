@@ -98,6 +98,7 @@ install_standalone_python_packages() {
     mitmproxy
     neovim-remote
     poetry
+    visidata
     )
 
     for package in "${packages[@]}"; do

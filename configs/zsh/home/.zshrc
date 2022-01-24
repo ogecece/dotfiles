@@ -267,7 +267,7 @@ alias vxmonad="$EDITOR ~/.xmonad/xmonad.hs"
 alias vvim="$EDITOR ~/.config/nvim"
 alias vb="$EDITOR ~/.bashrc"
 alias vz="$EDITOR ~/.zshrc"
-alias vd="$EDITOR ~/.dotfiles"
+alias vdot="$EDITOR ~/.dotfiles"
 
 ## gpg
 ### verify signature for isos
