@@ -352,6 +352,8 @@ alias rmgitcache="rm -r ~/.cache/git"
 ### moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
 
+### make a resized to Full HD copy of every file in folder with imagemagick (preserves aspect ratio)
+alias resizefullhd='mkdir -p resized; for file in ./*; do convert "$file" -resize 1920x1080^ -set filename:name "%f" "resized/%[filename:name]"; done'
 
 # REPORTING
 
