@@ -15,6 +15,7 @@ gsimplecal
 lxappearance-gtk3
 neovim
 newsboat
+noto-fonts-emoji
 npm
 ntfs-3g
 pnmixer
