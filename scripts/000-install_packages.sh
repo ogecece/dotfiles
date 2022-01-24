@@ -4,7 +4,6 @@ IFS=$'\n\t'
 
 
 pacman_package_list=(
-arcolinux-volumeicon-git
 autorandr
 base-devel
 clang
@@ -19,6 +18,7 @@ newsboat
 npm
 ntfs-3g
 picom
+pnmixer
 pyenv
 python-pynvim
 python-pip
@@ -44,7 +44,6 @@ bfg
 github-cli
 nvm
 tdrop-git
-volumeicon-git
 ytmdesktop
 zsh-pure-prompt
 )
