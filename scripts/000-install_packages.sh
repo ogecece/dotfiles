@@ -12,7 +12,7 @@ docker-compose
 fd
 fzf
 gsimplecal
-lxappearance-gtk3
+lxappearance
 neovim
 newsboat
 noto-fonts-emoji
@@ -26,7 +26,6 @@ python-pip
 python-virtualenvwrapper
 ripgrep
 rust
-screenkey
 slop
 stow
 sxhkd
@@ -37,7 +36,6 @@ zathura
 zathura-cb
 zathura-djvu
 zathura-pdf-mupdf
-zscroll-git
 )
 
 yay_package_list=(
@@ -45,8 +43,10 @@ bfg
 github-cli
 nvm
 picom-git
+screenkey-git
 tdrop-git
 ytmdesktop
+zscroll-git
 zsh-pure-prompt
 )
 
