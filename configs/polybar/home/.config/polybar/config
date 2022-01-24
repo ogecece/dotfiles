@@ -703,9 +703,9 @@ format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 exec = ~/.config/polybar/scripts/scroll_music_player_status.sh
-click-left = playerctl previous
-click-middle = playerctl play-pause
-click-right = playerctl next
+click-left = playerctl previous --ignore-player chromium
+click-middle = playerctl play-pause --ignore-player chromium
+click-right = playerctl next --ignore-player chromium
 
 ################################################################################
 
