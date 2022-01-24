@@ -18,6 +18,7 @@ newsboat
 noto-fonts-emoji
 npm
 ntfs-3g
+pacutils
 pnmixer
 pyenv
 python-pynvim
