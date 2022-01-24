@@ -13,6 +13,7 @@ docker-compose
 fd
 fzf
 gsimplecal
+lxappearance-gtk3
 neovim
 newsboat
 npm
