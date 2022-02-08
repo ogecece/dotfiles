@@ -7,6 +7,7 @@ pacman_package_list=(
 autorandr
 base-devel
 clang
+discord_arch_electron
 docker
 docker-compose
 fd
