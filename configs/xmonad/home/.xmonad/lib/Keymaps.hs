@@ -125,8 +125,10 @@ myKeys conf =
     , ("M-C-n", swapNextScreen)
     -- move focus to the next window.
     , ("M-j", windows focusDown)
+    , ("M-<Tab>", windows focusDown)
     -- move focus to the previous window.
     , ("M-k", windows focusUp)
+    , ("M-S-<Tab>", windows focusUp)
     -- increment the number of xm.windows in the master area.
     , ("M-l", sendMessage (XM.IncMasterN 1))
     -- decrement the number of xm.windows in the master area.
