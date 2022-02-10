@@ -1,3 +1,3 @@
 #!/bin/bash
 
-~/.xmonad/scripts/autostart.sh
+~/.scripts/autostart.sh

@@ -148,7 +148,7 @@ myStartupHook = do
     -- TODO[gcc]: make checkKeymap work (I'm not understanding what conf has to be passed as argument and how to do it)
     -- return ()
     -- checkKeymap conf (myKeys conf)
-    spawn "$HOME/.xmonad/scripts/autostart.sh"
+    spawn "$HOME/.scripts/autostart.sh"
     setWMName "LG3D"
 
 
