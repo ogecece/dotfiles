@@ -76,7 +76,7 @@ local function lsp_keymaps(bufnr)
     bufnr,
     "n",
     "gl",
-    '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
+    '<cmd>lua vim.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
     opts
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
@@ -99,6 +99,6 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
