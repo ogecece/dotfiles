@@ -11,6 +11,7 @@ vim.cmd [[
     autocmd!
     autocmd FileType gitcommit setlocal wrap
     autocmd FileType gitcommit setlocal spell
+    autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
   augroup end
 
   augroup _markdown
