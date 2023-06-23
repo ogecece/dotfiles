@@ -99,7 +99,7 @@ main = do
     D.requestName dbus (D.busName_ "org.xmonad.Log")
         [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
 
-    xmonad $ (myConfig dbus)
+    xmonad $ EWMH.ewmhFullscreen . EWMH.ewmh $ (myConfig dbus)
 
 myManageHook = composeAll . concat $
     [ [isDialog --> doCenterFloat]
@@ -115,7 +115,7 @@ myManageHook = composeAll . concat $
         myRFloats = []
         myRIgnores = ["desktop_window"]
 
-myHandleEventHook = handleEventHook desktopConfig <+> EWMH.fullscreenEventHook
+myHandleEventHook = handleEventHook desktopConfig
 
 dbusOutput :: D.Client -> String -> IO ()
 dbusOutput dbus str = do
