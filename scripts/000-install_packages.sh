@@ -10,6 +10,7 @@ clang
 discord_arch_electron
 docker
 docker-compose
+element-desktop
 fd
 fzf
 gsimplecal
