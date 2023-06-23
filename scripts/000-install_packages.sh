@@ -13,6 +13,7 @@ docker-compose
 element-desktop
 fd
 fzf
+github-cli
 gsimplecal
 lxappearance
 neovim
@@ -21,6 +22,7 @@ noto-fonts-emoji
 npm
 ntfs-3g
 pacutils
+picom
 pnmixer
 pyenv
 python-pynvim
@@ -42,12 +44,9 @@ zathura-pdf-mupdf
 
 yay_package_list=(
 bfg
-github-cli
 nvm
-picom-git
 screenkey-git
 tdrop-git
-ytmdesktop
 zscroll-git
 zsh-pure-prompt
 )
