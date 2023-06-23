@@ -849,7 +849,7 @@ label = %output:0:150%
 type = custom/text
 content = "襤  "
 content-foreground = ${colors.secondary}
-click-left = arcolinux-logout
+click-left = archlinux-logout
 
 ################################################################################
 

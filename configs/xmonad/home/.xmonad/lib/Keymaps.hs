@@ -79,7 +79,7 @@ myKeys conf =
     , ("M-S-t", spawn $ myTerminal)
     , ("M-S-e", spawn $ "nemo")
     , ("M-S-d", spawn $ "dmenu_run -i -nb '" ++ back ++ "' -nf '" ++ fore ++ "' -sb '" ++ back ++ "' -sf '" ++ focused ++ "' -fn 'SauceCodePro:semibold:pixelsize=25'")
-    , ("M-S-<Escape>", spawn $ "arcolinux-logout")
+    , ("M-S-<Escape>", spawn $ "archlinux-logout")
     , ("M-S-q", kill)
     , ("M-C-q", spawn $ "xkill")
     -- super + alt keys

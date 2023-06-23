@@ -107,7 +107,7 @@ myManageHook = composeAll . concat $
     , [title =? t --> doFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
     , [resource =? i --> doIgnore | i <- myRIgnores]
-    , [title =? "Arcolinux Logout" --> doFullFloat]
+    , [title =? "Archlinux Logout" --> doFullFloat]
     ]
     where
         myCFloats = ["Arcolinux-calamares-tool.py", "Arcolinux-tweak-tool.py", "Arcolinux-welcome-app.py", "Galculator", "feh", "mpv", "Xfce4-terminal"]
