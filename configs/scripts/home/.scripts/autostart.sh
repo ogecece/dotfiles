@@ -44,4 +44,4 @@ setxkbmap -layout br
 # swap caps lock with escape
 setxkbmap -option caps:swapescape
 
-(sleep 1 ; xdo lower -m -N 'Polybar') &
+xdo lower -m -N 'Polybar' &

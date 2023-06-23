@@ -2,7 +2,7 @@
 
 # see man zscroll for documentation of the following parameters
 zscroll \
-  -l 60 \
+  -l 90 \
   --delay 0.1 \
   --scroll-padding "    " \
   --match-command "$HOME/.config/polybar/scripts/get_music_player_status.sh --status" \
