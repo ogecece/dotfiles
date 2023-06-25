@@ -35,6 +35,8 @@ stow
 sxhkd
 tldr
 tree
+ttf-font-awesome
+ttf-sourcecodepro-nerd
 xorg-xmessage
 zathura
 zathura-cb
