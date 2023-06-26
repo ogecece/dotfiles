@@ -7,6 +7,8 @@ pacman_package_list=(
 autorandr
 base-devel
 clang
+deluge
+deluge-gtk
 discord_arch_electron
 docker
 docker-compose
