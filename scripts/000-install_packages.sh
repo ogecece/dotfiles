@@ -20,12 +20,14 @@ gsimplecal
 lxappearance
 neovim
 newsboat
+netavark
 noto-fonts-emoji
 npm
 ntfs-3g
 pacutils
 picom
 pnmixer
+podman
 pyenv
 python-pynvim
 python-pip
