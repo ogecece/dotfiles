@@ -55,7 +55,7 @@ install_python_versions() {
 install_pipx() {
     eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
-    sudo pacman -S python-pipx
+    sudo pacman -S python-pipx --noconfirm
     pipx ensurepath
 
     echo
