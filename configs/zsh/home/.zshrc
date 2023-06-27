@@ -116,6 +116,10 @@ setopt CORRECT
 
 # ALIASES
 
+### editor
+alias v="vim ."
+alias n="nvim ."
+
 ### list
 alias ls='ls --color=auto'
 alias la='ls -a'
