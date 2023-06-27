@@ -4,6 +4,7 @@ IFS=$'\n\t'
 
 
 pacman_package_list=(
+aardvark-dns
 autorandr
 base-devel
 clang
@@ -28,6 +29,7 @@ pacutils
 picom
 pnmixer
 podman
+podman-dnsname
 pyenv
 python-pynvim
 python-pip
