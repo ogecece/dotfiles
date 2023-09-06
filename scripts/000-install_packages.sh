@@ -52,6 +52,7 @@ zathura-pdf-mupdf
 
 yay_package_list=(
 bfg
+clight-gui-git
 nvm
 screenkey-git
 tdrop-git
