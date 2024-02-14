@@ -129,7 +129,6 @@ dbusOutput dbus str = do
         memberName = D.memberName_ "Update"
 
 myLogHook dbus = do 
-  updatePointer (0.5, 0.5) (0, 0)
   dynamicLogWithPP (
       DL.def { ppOutput = dbusOutput dbus
              , ppCurrent = wrap ("%{B" ++ focused ++ "}%{F" ++ back ++ "} ") " %{F-}%{B-}"
