@@ -1,7 +1,7 @@
 # GENERAL EXPORTS
 
 ### defaults
-export EDITOR="nvim"
+export EDITOR="lvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
 

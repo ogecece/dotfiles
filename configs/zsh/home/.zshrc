@@ -118,7 +118,7 @@ setopt CORRECT
 
 ### editor
 alias v="vim ."
-alias n="nvim ."
+alias n="lvim ."
 
 ### list
 alias ls='ls --color=auto'
@@ -163,7 +163,7 @@ alias pacman='sudo pacman --color auto'
 alias update='sudo pacman -Syyu'
 
 ### yay as aur helper - updates everything
-alias upall="yay -Syu --noconfirm"
+alias upall="flatpak update -y && yay -Syu --noconfirm"
 
 ### ps
 alias psa="ps auxf"
@@ -268,7 +268,7 @@ alias vgnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
 alias valacritty="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias vpolybar="$EDITOR ~/.config/polybar/config"
 alias vxmonad="$EDITOR ~/.xmonad/xmonad.hs"
-alias vvim="$EDITOR ~/.config/nvim"
+alias vvim="$EDITOR ~/.config/lvim"
 alias vb="$EDITOR ~/.bashrc"
 alias vz="$EDITOR ~/.zshrc"
 alias vdot="$EDITOR ~/.dotfiles"
